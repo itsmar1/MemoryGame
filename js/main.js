@@ -12,3 +12,13 @@ document.querySelector('.control-buttons span').onclick = function(){
     document.querySelector('.control-buttons').remove();
 }
 
+var timing = 1000;
+
+var blocksContainer = document.querySelector('.memory-game-blocks');
+
+var blocks = Array.from(blocksContainer.children);
+
+var orderRange = [...Array(blocks.length).keys()];
+
+console.log(orderRange);
+
