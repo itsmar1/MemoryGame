@@ -19,6 +19,20 @@ var blocksContainer = document.querySelector('.memory-game-blocks');
 var blocks = Array.from(blocksContainer.children);
 
 var orderRange = [...Array(blocks.length).keys()];
+// Another method to create range of keys
+var orderRangee = Array.from(Array(blocks.length).keys());
 
-console.log(orderRange);
+
+// Add order CSS property the game
+blocks.forEach( (block, index) => {
+    
+    block.style.order = index;
+});
+
+
+
+
+
+
+
 
