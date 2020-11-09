@@ -29,11 +29,28 @@ console.log(orderRange);
 blocks.forEach( (block, index) => {
     
     block.style.order = orderRange[index];
+
+    block.addEventListener('click', function(){
+        flipBlock(block);
+    });
 });
 
+function flipBlock(selectedBlock) {
+
+    selectedBlock.classList.add('is-flipped');
+
+    // Collect all flipped cards 
+    let allFlippedBlocks = blocks.filter( flipped => flipped.classList.contains('is-flipped'));
+
+    if ( allFlippedBlocks.length === 2) {
+        
+        // stop clicking funtion
+
+        // Check matched block funtion
+    }
+}
 
 // Create Shuffle function 
-
 function shuffle(array) {
 
     // get the current index
