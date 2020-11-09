@@ -47,8 +47,35 @@ function flipBlock(selectedBlock) {
         // stop clicking funtion
         stopClicking();
         // Check matched block funtion
+        checkMatchedBlocks(...allFlippedBlocks);
     }
 }
+
+
+// Check matched blocks function
+function checkMatchedBlocks(firstBlock, secondBlock){
+
+    let tries = document.querySelector('.info-container .tries span');
+
+    if ( firstBlock.dataset.fruit === secondBlock.dataset.fruit ){
+
+        firstBlock.classList.remove('is-flipped');
+        secondBlock.classList.remove('is-flipped');
+
+        firstBlock.classList.add('has-match');
+        secondBlock.classList.add('has-match');
+    }
+    else{
+        tries.innerHTML = parseInt(tries.innerHTML) + 1;
+
+        setTimeout( () => {
+            firstBlock.classList.remove('is-flipped');
+            secondBlock.classList.remove('is-flipped');
+        }, duration);
+        
+    }
+}
+
 
 // Stop Clicking Function
 function stopClicking() {
@@ -58,8 +85,9 @@ function stopClicking() {
     setTimeout( () => {
         document.querySelector('.memory-game-blocks').classList.remove('no-clicking');
     }, duration);
-    
+
 }
+
 
 // Create Shuffle function 
 function shuffle(array) {
