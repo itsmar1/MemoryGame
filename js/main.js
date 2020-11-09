@@ -12,7 +12,7 @@ document.querySelector('.control-buttons span').onclick = function(){
     document.querySelector('.control-buttons').remove();
 }
 
-var timing = 1000;
+var duration = 1000;
 
 var blocksContainer = document.querySelector('.memory-game-blocks');
 
@@ -45,9 +45,20 @@ function flipBlock(selectedBlock) {
     if ( allFlippedBlocks.length === 2) {
         
         // stop clicking funtion
-
+        stopClicking();
         // Check matched block funtion
     }
+}
+
+// Stop Clicking Function
+function stopClicking() {
+
+    document.querySelector('.memory-game-blocks').classList.add('no-clicking');
+
+    setTimeout( () => {
+        document.querySelector('.memory-game-blocks').classList.remove('no-clicking');
+    }, duration);
+    
 }
 
 // Create Shuffle function 
