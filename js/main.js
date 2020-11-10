@@ -64,6 +64,8 @@ function checkMatchedBlocks(firstBlock, secondBlock){
 
         firstBlock.classList.add('has-match');
         secondBlock.classList.add('has-match');
+
+        document.querySelector('#success').play();
     }
     else{
         tries.innerHTML = parseInt(tries.innerHTML) + 1;
@@ -72,6 +74,8 @@ function checkMatchedBlocks(firstBlock, secondBlock){
             firstBlock.classList.remove('is-flipped');
             secondBlock.classList.remove('is-flipped');
         }, duration);
+
+        document.querySelector('#fail').play();
         
     }
 }
